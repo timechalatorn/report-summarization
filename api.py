@@ -2,8 +2,17 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from bullet_summarizer import summarize_chunk, create_hierarchical_summary
 from utils import segment_sentences, embed_sentences, detect_change_points, chunk_by_breakpoints
-
+from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
+
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # or restrict to your frontend's origin
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 class TextInput(BaseModel):
     text: str
