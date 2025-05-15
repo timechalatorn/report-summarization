@@ -1,0 +1,10 @@
+fastapi==0.115.12
+numpy==2.2.5
+pydantic==2.11.4
+pythainlp==4.0.2
+Requests==2.32.3
+rouge_score==0.1.2
+ruptures==1.1.9
+streamlit==1.45.1
+torch==2.3.0
+transformers==4.41.2
